@@ -1,0 +1,10 @@
+#!/bin/bash
+
+is_running=`ps -ef | grep biserver | grep java | awk '{ print "yes" }'`
+
+if [ "$is_running" == "yes" ]; then
+  echo "pentaho is running"
+else
+  echo "pentaho is NOT running"
+fi
+

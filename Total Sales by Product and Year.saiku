@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Query name="1C103493-B2B2-046F-8B3A-9851F7238AAC" type="QM" connection="AdventureWorks" cube="[Internet Sales]" catalog="Adventure Works" schema="Adventure Works">
+  <QueryModel>
+    <Axes>
+      <Axis location="ROWS" nonEmpty="true">
+        <Dimensions>
+          <Dimension name="Product" hierarchizeMode="PRE" hierarchyConsistent="true">
+            <Inclusions>
+              <Selection dimension="Product" type="level" node="[Product].[Product].[Product Name]" operator="MEMBERS" />
+            </Inclusions>
+            <Exclusions />
+          </Dimension>
+          <Dimension name="Measures" hierarchizeMode="PRE" hierarchyConsistent="false">
+            <Inclusions>
+              <Selection dimension="Measures" type="member" node="[Measures].[Total Sales]" operator="MEMBER" />
+            </Inclusions>
+            <Exclusions />
+          </Dimension>
+        </Dimensions>
+      </Axis>
+      <Axis location="COLUMNS" nonEmpty="true">
+        <Dimensions>
+          <Dimension name="Order Date" hierarchizeMode="PRE" hierarchyConsistent="true">
+            <Inclusions>
+              <Selection dimension="Order Date" type="level" node="[Order Date].[Monthly].[Year]" operator="MEMBERS" />
+            </Inclusions>
+            <Exclusions />
+          </Dimension>
+        </Dimensions>
+      </Axis>
+      <Axis location="FILTER" nonEmpty="false" />
+    </Axes>
+  </QueryModel>
+  <MDX>SELECT
+NON EMPTY {Hierarchize({[Order Date].[Monthly].[Year].Members})} ON COLUMNS,
+NON EMPTY CrossJoin([Product].[Product].[Product Name].Members, {[Measures].[Total Sales]}) ON ROWS
+FROM [Internet Sales]</MDX>
+</Query>
+

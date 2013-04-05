@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdf>
+  <title>Sale by Month</title>
+  <author>Bill Back</author>
+  <description>This dashboard shows sales by each month.</description>
+  <icon></icon>
+  <template>sales_bar_chart.html</template>
+</cdf>

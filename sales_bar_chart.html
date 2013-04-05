@@ -1,0 +1,42 @@
+<script type="text/javascript" src="GetCDFResource?resource=/MondrianInAction/sales_bar_chart.js"></script>
+
+<table align="center" style="border: 0px solid #000;">  
+  <tr>
+    <td valign="top"><div id="barChart_object"></div></td>
+  </tr>
+</table>
+
+<script language="javascript" type="text/javascript">
+
+title = 
+{
+  name: "title",
+  type: "text",
+  htmlObject: "title_object",
+  executeAtStart: true,
+  expression: function(){return "Sales by Month"}
+}
+
+barChart = 
+{
+  name: "barChart",
+  type: "jFreeChartComponent",
+  listeners:[],
+  chartDefinition: MetaLayerCharts.barChartDefinition,
+  htmlObject: "barChart_object",
+  executeAtStart: true
+}
+
+var components = [barChart];
+
+</script>
+
+<script language="javascript" type="text/javascript">
+
+function load(){
+  Dashboards.init(components);
+}
+
+load();
+
+</script>

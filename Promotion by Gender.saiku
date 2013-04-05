@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Query name="2182F74F-0190-243E-AD9C-1A525D8D71F9" type="QM" connection="AdventureWorks" cube="[Internet Sales]" catalog="Adventure Works" schema="Adventure Works">
+  <QueryModel>
+    <Axes>
+      <Axis location="ROWS" nonEmpty="true">
+        <Dimensions>
+          <Dimension name="Customer" hierarchizeMode="PRE" hierarchyConsistent="true">
+            <Inclusions>
+              <Selection dimension="Customer" type="level" node="[Customer].[Gender].[Gender]" operator="MEMBERS" />
+            </Inclusions>
+            <Exclusions />
+          </Dimension>
+          <Dimension name="Measures" hierarchizeMode="PRE" hierarchyConsistent="false">
+            <Inclusions>
+              <Selection dimension="Measures" type="member" node="[Measures].[Total Sales]" operator="MEMBER" />
+            </Inclusions>
+            <Exclusions />
+          </Dimension>
+        </Dimensions>
+      </Axis>
+      <Axis location="COLUMNS" nonEmpty="true">
+        <Dimensions>
+          <Dimension name="Promotion" hierarchizeMode="PRE" hierarchyConsistent="true">
+            <Inclusions>
+              <Selection dimension="Promotion" type="level" node="[Promotion].[Promotions].[Promotion Name]" operator="MEMBERS" />
+            </Inclusions>
+            <Exclusions />
+          </Dimension>
+        </Dimensions>
+      </Axis>
+      <Axis location="FILTER" nonEmpty="false" />
+    </Axes>
+  </QueryModel>
+  <MDX>SELECT
+NON EMPTY {Hierarchize({[Promotion].[Promotions].[Promotion Name].Members})} ON COLUMNS,
+NON EMPTY CrossJoin([Customer].[Gender].[Gender].Members, {[Measures].[Total Sales]}) ON ROWS
+FROM [Internet Sales]</MDX>
+</Query>
+

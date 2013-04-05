@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<action-sequence> 
+  <title>Set Session Variables</title>
+  <version>1</version>
+  <logging-level>ERROR</logging-level>
+  <documentation> 
+    <author>Bill Back</author>  
+    <description>Sets session variables to modify user data acccess at runtime.</description>  
+    <help/>  
+    <result-type/>  
+    <icon/> 
+  </documentation>
+
+  <inputs> 
+    <USER_REGION_CODE type="string">
+      <!-- co id="ch08_user_region_code" -->  
+      <sources> 
+        <request>USER_REGION_CODE</request> 
+      </sources>  
+      <default-value><![CDATA[US]]></default-value> 
+    </USER_REGION_CODE>  
+    <USER_STATE_PROVINCE_NAME type="string">
+      <!-- co id="ch08_user_state_code" -->  
+      <sources> 
+        <request>USER_STATE_PROVINCE_NAME</request> 
+      </sources>  
+      <default-value><![CDATA[WA]]></default-value> 
+    </USER_STATE_PROVINCE_NAME> 
+  </inputs>
+
+  <outputs> 
+    <USER_REGION_CODE type="string">
+      <destinations>
+        <session>USER_REGION_CODE</session>
+      </destinations>
+    </USER_REGION_CODE>  
+    <USER_STATE_PROVINCE_NAME type="string">
+      <destinations>
+        <session>USER_STATE_PROVINCE_NAME</session>
+      </destinations>
+    </USER_STATE_PROVINCE_NAME> 
+  </outputs>
+
+  <resources/>
+  
+  <actions/> 
+</action-sequence>

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+processid=`ps -ef | grep biserver | grep java | awk '{ print $2 }'`
+
+if [ "$processid" == "" ]; then
+  echo "pentaho is not running"
+else
+  echo "killing pentaho (pid = $processid)"
+  kill -9 $processid
+fi
+

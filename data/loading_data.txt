@@ -1,0 +1,8 @@
+Loading Adventure Works files:
+
+1. In mysql create a database to load into since the backups don't create the database.  For example:
+mysql> create database adventure_works_dw;
+mysql> use adventure_works_dw;
+
+2. Load the file.  There are a number of ways, but if you are already using the database, then use the following:
+mysql> source adventure_works_dw.mysql;

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /opt/pentaho/biserver-ce-4.8/biserver-ce
+./stop-pentaho.sh
+
