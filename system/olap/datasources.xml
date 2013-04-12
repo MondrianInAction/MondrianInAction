@@ -9,24 +9,23 @@
     <ProviderType>MDP</ProviderType>
     <AuthenticationMode>Unauthenticated</AuthenticationMode>
     <Catalogs>
-      <Catalog name="AdventureWorks">
+        <Catalog name="SteelWheels">
+            <DataSourceInfo>Provider=mondrian;DataSource=SampleData</DataSourceInfo>
+			<Definition>solution:steel-wheels/analysis/steelwheels.mondrian.xml</Definition>
+		</Catalog>
+        <Catalog name="SampleData">
+            <DataSourceInfo>Provider=mondrian;DataSource=SampleData</DataSourceInfo>
+            <Definition>solution:steel-wheels/analysis/SampleData.mondrian.xml</Definition>
+        </Catalog>
+ 	<Catalog name="AdventureWorks">
         <DataSourceInfo>Provider=mondrian;DataSource=AdventureWorksDW</DataSourceInfo>
         <Definition>solution:MondrianInAction/adventure_works.mondrian.xml</Definition>
       </Catalog>
-<!--
-      <Catalog name="SteelWheels">
-        <DataSourceInfo>Provider=mondrian;DataSource=SampleData</DataSourceInfo>
-        <Definition>solution:steel-wheels/analysis/steelwheels.mondrian.xml</Definition>
-      </Catalog>
-      <Catalog name="SampleData">
-        <DataSourceInfo>Provider=mondrian;DataSource=SampleData</DataSourceInfo>
-        <Definition>solution:steel-wheels/analysis/SampleData.mondrian.xml</Definition>
-      </Catalog>
-      <Catalog name="FoodMart">
-        <DataSourceInfo>Provider=mondrian;DataSource=FoodMart</DataSourceInfo>
-        <Definition>solution:foodmart/NewFoodMart.xml</Definition>
-      </Catalog>
--->
+      <!-- -->
+       <Catalog name="FoodMart">
+                 <DataSourceInfo>Provider=mondrian;DataSource=FoodMart</DataSourceInfo>
+                         <Definition>solution:MondrianInAction/FoodMart.mondrian.xml</Definition>
+                       </Catalog>
     </Catalogs>
   </DataSource>
 </DataSources>
