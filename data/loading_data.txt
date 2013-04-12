@@ -6,3 +6,7 @@ mysql> use adventure_works_dw;
 
 2. Load the file.  There are a number of ways, but if you are already using the database, then use the following:
 mysql> source adventure_works_dw.mysql;
+
+Load Foodmart
+
+Use standard Mondrian  method for loading foodmart into mysql
